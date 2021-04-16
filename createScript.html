@@ -17,14 +17,15 @@
 
             <fieldset class="task" id="1">
                 <datalist id="ReactionType">
-                <option label="переход к другому вопросу" value="next_task">
-                <option label = "переход по ссылке" value="link">
-                <option label="переход к другому сценарию" value="script">
-            </datalist>
+                    <option label="переход к другому вопросу" value="next_task">
+                    <option label = "переход по ссылке" value="link">
+                    <option label="переход к другому сценарию" value="script">
+                </datalist>
 
                 <legend>Создание нового вопроса</legend>
 
                 <input type="text" name="question" placeholder="Вопрос">
+                <input class="remove-question" type="button" value="-">
 
                 <fieldset class="awnser" id="1">
                     <legend>Добавление ответа</legend>
@@ -32,14 +33,14 @@
                     <input placeholder="Тип реакции" name="ReactionType" list="ReactionType">
                     <input placeholder="реакция" name="reaction" type="text">
                     <input type="text" name="awnser" placeholder="ответ">
-                    <input class="delete" type="button" value="-">
+                    <input class="remove-awnser" type="button" value="-">
                 </fieldset>
 
-                <input id="add-awnser" type="button" value="+ ответ">
+                <input class="add-awnser" type="button" value="+ ответ">
 
             </fieldset>
 
-            <input type="button" value="+ вопрос">
+            <input id="add-question" type="button" value="+ вопрос">
         </fieldset>
         <input type="submit" value="Добавить скрипт">
     </form>
