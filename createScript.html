@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create script</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/createScript.js"></script>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Создание нового скрипта</legend>
+
+            <fieldset class="task" id="1">
+                <datalist id="ReactionType">
+                <option label="переход к другому вопросу" value="next_task">
+                <option label = "переход по ссылке" value="link">
+                <option label="переход к другому сценарию" value="script">
+            </datalist>
+
+                <legend>Создание нового вопроса</legend>
+
+                <input type="text" name="question" placeholder="Вопрос">
+
+                <fieldset class="awnser" id="1">
+                    <legend>Добавление ответа</legend>
+
+                    <input placeholder="Тип реакции" name="ReactionType" list="ReactionType">
+                    <input placeholder="реакция" name="reaction" type="text">
+                    <input type="text" name="awnser" placeholder="ответ">
+                    <input class="delete" type="button" value="-">
+                </fieldset>
+
+                <input id="add-awnser" type="button" value="+ ответ">
+
+            </fieldset>
+
+            <input type="button" value="+ вопрос">
+        </fieldset>
+        <input type="submit" value="Добавить скрипт">
+    </form>
+</body>
+
+
+
+</html>
