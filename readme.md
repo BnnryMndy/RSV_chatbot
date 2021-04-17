@@ -33,7 +33,7 @@
 
 
 
-РАЗРАБОТЧИКИ
+<h4>Разработчики</h4>
 
 <h4>Кристина Жаткина teamlead https://t.me/kriszhatkina</h4>
 <h4>Янина Смирнова analyst https://t.me/Yanina Smirnova</h4>
