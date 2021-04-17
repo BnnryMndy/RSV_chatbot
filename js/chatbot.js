@@ -1,20 +1,18 @@
 function displayQuestion(data, task_id) {
     console.log(data);
     getAwnsersList(task_id);
-    $(".chat-log").append('<div class="interective-helper__question">' + data + '</div>');
+    $(".interective-helper__chat-room").append('<div class="interective-helper__question">' + data + '</div>');
+    $(".interective-helper__chat-room").append('interective-helper__chat-line');
 }
 
 function displayAwnser(data) {
-    // console.log("reaction data in dispAwnser " + reaction_data);
     $(".chat-log").append("<input class='interective-helper__answer' type='button' value='" + data + "'>");
-    // $('input[value="' + data + '"]').on("click", reaction(reaction_data));
 }
 
 function addReactions(data, reaction_data) {
     $('input[value="' + data + '"]').bind("click", function() {
         reaction(reaction_data);
         $(".interective-helper__answer").unbind();
-        // $(this).remove("interective-helper__answer");
         $(this).attr('class', "interective-helper__selected-answer");
         $(".interective-helper__answer").remove();
     });
@@ -104,10 +102,7 @@ function selectReaction(awnser_id, button_data) {
     });
 }
 
-// function returnValue(returnData){
-//     console.log(returnData);
-//     return returnData
-// }
+
 
 function getReaction(reaction_id, button_data) {
     console.log("reaction_id in getReaction  " + reaction_id);
@@ -123,5 +118,4 @@ function getReaction(reaction_id, button_data) {
 
 $(document).ready(function() {
     getScript(4);
-    // $('input[value="' + 'Вариант 1' + '"]').bind("click", function() { reaction("script:4") });
 });
