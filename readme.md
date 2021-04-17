@@ -35,8 +35,8 @@
 
 <h4>Разработчики</h4>
 
-<h4>Кристина Жаткина teamlead https://t.me/kriszhatkina</h4>
-<h4>Янина Смирнова analyst https://t.me/Yanina Smirnova</h4>
-<h4>Коновалова Настасья designer  https://t.me/Nastasya K</h4>
-<h4>Евгений Ершов frontend https://t.me/evgforte</h4>
-<h4>Лазарев Антон backend https://t.me/Anton_web_Lazarev</h4>
+<P>Кристина Жаткина teamlead https://t.me/kriszhatkina</P>
+<P>Янина Смирнова analyst https://t.me/YaninaSmirnova</P>
+<P>Коновалова Настасья designer  https://t.me/NastasyaK</P>
+<P>Евгений Ершов frontend https://t.me/evgforte</P>
+<P>Лазарев Антон backend https://t.me/Anton_web_Lazarev</P>
