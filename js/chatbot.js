@@ -1,11 +1,42 @@
 function displayQuestion(data, task_id) {
     console.log(data);
     getAwnsersList(task_id);
-    $(".chat-log").append("<h3>" + data + "</h3><br>");
+    $(".chat-log").append('<div class="interective-helper__question">' + data + '</div>');
 }
 
 function displayAwnser(data) {
-    $(".chat-log").append("<input type='button' value='" + data + "'>");
+    // console.log("reaction data in dispAwnser " + reaction_data);
+    $(".chat-log").append("<input class='interective-helper__answer' type='button' value='" + data + "'>");
+    // $('input[value="' + data + '"]').on("click", reaction(reaction_data));
+}
+
+function addReactions(data, reaction_data) {
+    $('input[value="' + data + '"]').bind("click", function() {
+        reaction(reaction_data);
+        $(".interective-helper__answer").unbind();
+        // $(this).remove("interective-helper__answer");
+        $(this).attr('class', "interective-helper__selected-answer");
+        $(".interective-helper__answer").remove();
+    });
+}
+
+
+
+function reaction(reaction_data) {
+    console.log(reaction_data)
+    var reaction_splitted_data = reaction_data.split(':');
+    var reaction_type = reaction_splitted_data[0];
+    var reaction_link = reaction_splitted_data[1];
+
+    if (reaction_type == "next_task") {
+        getQuestion(reaction_link);
+    }
+    if (reaction_type == "link") {
+        window.location.replace(reaction_link);
+    }
+    if (reaction_type == "script") {
+        getScript(reaction_link);
+    }
 }
 
 function getQuestion(task_id) {
@@ -43,31 +74,54 @@ function getScript(script_id) {
         data: { script_id: script_id },
         success: function(data) {
             tasks = data.split(',');
-            tasks.forEach(task_id => {
-                getQuestion(task_id);
-            });
-
+            console.log(tasks);
+            getQuestion(tasks[0]);
         }
     });
 }
 
 function getAwnser(awnser_id) {
+
     var request = $.ajax({
         type: "GET",
         url: "php/getAwnser.php",
         data: { awnser_id: awnser_id },
         success: function(data) {
             displayAwnser(data);
-            // getReactions(reaction_id);
+            selectReaction(awnser_id, data);
         }
     });
 }
 
-function getReactions(reaction_id) {
+function selectReaction(awnser_id, button_data) {
+    var request = $.ajax({
+        type: "GET",
+        url: "php/selectReactions.php",
+        data: { awnser_id: awnser_id },
+        success: function(data) {
+            getReaction(data, button_data);
+        }
+    });
+}
 
+// function returnValue(returnData){
+//     console.log(returnData);
+//     return returnData
+// }
+
+function getReaction(reaction_id, button_data) {
+    console.log("reaction_id in getReaction  " + reaction_id);
+    var request = $.ajax({
+        type: "GET",
+        url: "php/getReaction.php",
+        data: { reaction_id: reaction_id },
+        success: function(data) {
+            addReactions(button_data, data);
+        }
+    });
 }
 
 $(document).ready(function() {
     getScript(4);
-
+    // $('input[value="' + 'Вариант 1' + '"]').bind("click", function() { reaction("script:4") });
 });
