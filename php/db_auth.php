@@ -1,8 +1,11 @@
 <?php
-    /* Подключение к серверу MySQL, лучше так не подключаться */
-    $mysqli = new mysqli('localhost', 'root', 'root', 'rsv_chatbot');
+    $host = 'localhost';
+    $user = 'root';
+    $password = 'root';
+    $database = 'rsv_chatbot';
+
+    $mysqli = new mysqli($host, $user, $password, $database);
     if (mysqli_connect_errno()) {
         printf("Подключение к серверу MySQL невозможно. Код ошибки: %s<br>", mysqli_connect_error());
         exit;
     }
-?>
