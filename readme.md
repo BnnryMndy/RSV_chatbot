@@ -19,7 +19,7 @@
  </ul>
 
 <h4>Демо-материалы</h4>
-<p>демонстрационный ролик доступен по ссылке: </p>
+<p>демонстрационный ролик доступен по ссылке: https://drive.google.com/file/d/16UcsxdvLvN0gO2dhLeHuFwAj2W71PqMx/view</p>
 <p>диаграмма потока данных (DFD) для разработанной базы данных:</p>
 <img src="https://sun9-9.userapi.com/impg/E8t7b-S8xhrx4nbZDPQiLB0gXdyh3gjh1qEExA/TLiqNacUSJQ.jpg?size=822x428&quality=96&sign=67014a4fcf66ed15aa732e438718a556&type=album" alt="DFD">
 
